@@ -1,2 +1,120 @@
-# ai-java-code-review
-AI-powered Java code review and auto-documentation platform using AST parsing and LLMs.
+# AI Java Code Review & Auto-Documentation Platform
+
+A full-stack AI-powered platform that analyzes Java source files using **AST-based parsing** and generates **structured, method-level code reviews and Javadoc** using Large Language Models (LLMs).
+
+This project avoids unsafe string manipulation and instead relies on **JavaParser AST traversal and rewriting** for production-grade safety.
+
+---
+
+## 🚀 Key Features
+
+- **AST-Based Java Parsing**
+  - Safely extracts class and method structures
+  - Built using JavaParser
+
+- **AI-Powered Code Review**
+  - Method-level feedback
+  - Auto-generated Javadoc suggestions
+
+- **Strict LLM JSON Contracts**
+  - Machine-safe responses
+  - Backend-validated AI output
+
+- **AST-Driven Javadoc Insertion**
+  - No regex or string replacement
+  - Guaranteed Java syntax safety
+
+- **Robust Error Handling**
+  - Clear diagnostics for malformed Java files
+
+- **End-to-End Workflow**
+  - Upload Java source
+  - Review AI feedback
+  - Download updated, documented source
+
+---
+
+## 📸 Screenshots
+
+### 1️⃣ Java Source Upload (AST-Based Analysis)
+![Java Upload](screenshots/upload-java-file.png)
+
+Users upload Java source files for safe AST-based parsing and analysis.
+
+---
+
+### 2️⃣ AI-Powered Method-Level Review
+![AI Review](screenshots/ai-method-review.png)
+
+Structured method-level feedback with AI-generated Javadoc suggestions, returned in strict JSON format.
+
+---
+
+### 3️⃣ Safely Rewritten Java Source
+![Rewritten Source](screenshots/rewritten-java-source.png)
+
+Final Java source rewritten using AST manipulation — **no string replacement**, ensuring syntax safety.
+
+
+## 🧱 Architecture
+
+┌────────────────────┐
+│  React Frontend    │
+│  (Vite + REST)     │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Spring Boot API    │
+│ - Upload handling │
+│ - Validation      │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ JavaParser (AST)   │
+│ - Class parsing   │
+│ - Method parsing  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ LLM (Groq API)     │
+│ - Strict JSON     │
+│ - Method reviews  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ AST Rewriter       │
+│ - Javadoc insert  │
+│ - Safe rewrite    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Download Updated   │
+│ Java Source File   │
+└────────────────────┘
+
+---
+
+## 🛠 Tech Stack
+
+**Backend**
+- Java 17
+- Spring Boot
+- JavaParser
+
+**AI / LLM**
+- Groq API
+- Prompt-controlled JSON output
+
+**Frontend**
+- React
+- Vite
+
+**Best Practices**
+- Environment-based configuration
+- Secure secret management
+- Clean Git history
