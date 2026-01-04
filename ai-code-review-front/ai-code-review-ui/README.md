@@ -58,44 +58,7 @@ Final Java source rewritten using AST manipulation — **no string replacement**
 
 ## 🧱 Architecture
 
-┌────────────────────┐
-│  React Frontend    │
-│  (Vite + REST)     │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ Spring Boot API    │
-│ - Upload handling │
-│ - Validation      │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ JavaParser (AST)   │
-│ - Class parsing   │
-│ - Method parsing  │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ LLM (Groq API)     │
-│ - Strict JSON     │
-│ - Method reviews  │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ AST Rewriter       │
-│ - Javadoc insert  │
-│ - Safe rewrite    │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ Download Updated   │
-│ Java Source File   │
-└────────────────────┘
+![Architecture Diagram](screenshots/architecture.png)
 
 ---
 
