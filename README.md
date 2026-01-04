@@ -35,16 +35,7 @@ This project avoids unsafe string manipulation and instead relies on **JavaParse
 ---
 
 ## 🧱 Architecture
-React (Vite)
-↓
-Spring Boot REST API
-↓
-JavaParser AST
-↓
-LLM (Groq API)
-↓
-AST-based Source Rewriting
-
+React (Vite) -> Spring Boot REST API -> JavaParser AST -> LLM (Groq API) -> AST-based Source Rewriting
 ---
 
 ## 🛠 Tech Stack
