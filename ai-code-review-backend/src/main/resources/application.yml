@@ -1,0 +1,27 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.ai.autoconfigure.openai.OpenAiAutoConfiguration
+      - org.springframework.ai.autoconfigure.openai.OpenAiAudioSpeechAutoConfiguration
+  ai:
+    openai:
+      enabled: false
+    groq:
+      apiKey: ${GROQ_API_KEY:}
+      baseUrl: https://api.groq.com/openai/v1
+      model: llama-3.3-70b-versatile
+
+
+  # datasource:
+  #  url: jdbc:postgresql://localhost:5432/codereview
+  #  username: postgres
+  #  password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080

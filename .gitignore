@@ -1,0 +1,20 @@
+# IntelliJ / IDE
+.idea/
+.vscode/
+*.iml
+
+# Java
+target/
+*.class
+
+# Node / Frontend
+node_modules/
+dist/
+
+# Environment / Secrets
+.env
+*.env
+application.properties
+
+# OS
+.DS_Store
