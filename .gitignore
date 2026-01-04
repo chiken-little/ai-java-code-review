@@ -14,7 +14,6 @@ dist/
 # Environment / Secrets
 .env
 *.env
-application.properties
 
 # OS
 .DS_Store

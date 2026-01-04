@@ -1,16 +1,120 @@
-# React + Vite
+# AI Java Code Review & Auto-Documentation Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack AI-powered platform that analyzes Java source files using **AST-based parsing** and generates **structured, method-level code reviews and Javadoc** using Large Language Models (LLMs).
 
-Currently, two official plugins are available:
+This project avoids unsafe string manipulation and instead relies on **JavaParser AST traversal and rewriting** for production-grade safety.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **AST-Based Java Parsing**
+  - Safely extracts class and method structures
+  - Built using JavaParser
 
-## Expanding the ESLint configuration
+- **AI-Powered Code Review**
+  - Method-level feedback
+  - Auto-generated Javadoc suggestions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Strict LLM JSON Contracts**
+  - Machine-safe responses
+  - Backend-validated AI output
+
+- **AST-Driven Javadoc Insertion**
+  - No regex or string replacement
+  - Guaranteed Java syntax safety
+
+- **Robust Error Handling**
+  - Clear diagnostics for malformed Java files
+
+- **End-to-End Workflow**
+  - Upload Java source
+  - Review AI feedback
+  - Download updated, documented source
+
+---
+
+## 📸 Screenshots
+
+### 1️⃣ Java Source Upload (AST-Based Analysis)
+![Java Upload](screenshots/upload-java-file.png)
+
+Users upload Java source files for safe AST-based parsing and analysis.
+
+---
+
+### 2️⃣ AI-Powered Method-Level Review
+![AI Review](screenshots/ai-method-review.png)
+
+Structured method-level feedback with AI-generated Javadoc suggestions, returned in strict JSON format.
+
+---
+
+### 3️⃣ Safely Rewritten Java Source
+![Rewritten Source](screenshots/rewritten-java-source.png)
+
+Final Java source rewritten using AST manipulation — **no string replacement**, ensuring syntax safety.
+
+
+## 🧱 Architecture
+
+┌────────────────────┐
+│  React Frontend    │
+│  (Vite + REST)     │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Spring Boot API    │
+│ - Upload handling │
+│ - Validation      │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ JavaParser (AST)   │
+│ - Class parsing   │
+│ - Method parsing  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ LLM (Groq API)     │
+│ - Strict JSON     │
+│ - Method reviews  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ AST Rewriter       │
+│ - Javadoc insert  │
+│ - Safe rewrite    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Download Updated   │
+│ Java Source File   │
+└────────────────────┘
+
+---
+
+## 🛠 Tech Stack
+
+**Backend**
+- Java 17
+- Spring Boot
+- JavaParser
+
+**AI / LLM**
+- Groq API
+- Prompt-controlled JSON output
+
+**Frontend**
+- React
+- Vite
+
+**Best Practices**
+- Environment-based configuration
+- Secure secret management
+- Clean Git history
