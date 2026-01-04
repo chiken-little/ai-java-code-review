@@ -34,6 +34,28 @@ This project avoids unsafe string manipulation and instead relies on **JavaParse
 
 ---
 
+## 📸 Screenshots
+
+### 1️⃣ Java Source Upload (AST-Based Analysis)
+![Java Upload](screenshots/upload-java-file.png)
+
+Users upload Java source files for safe AST-based parsing and analysis.
+
+---
+
+### 2️⃣ AI-Powered Method-Level Review
+![AI Review](screenshots/ai-method-review.png)
+
+Structured method-level feedback with AI-generated Javadoc suggestions, returned in strict JSON format.
+
+---
+
+### 3️⃣ Safely Rewritten Java Source
+![Rewritten Source](screenshots/rewritten-java-source.png)
+
+Final Java source rewritten using AST manipulation — **no string replacement**, ensuring syntax safety.
+
+
 ## 🧱 Architecture
 React (Vite) -> Spring Boot REST API -> JavaParser AST -> LLM (Groq API) -> AST-based Source Rewriting
 ---
